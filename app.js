@@ -19,7 +19,9 @@ app.use(express.urlencoded({ extended: true }));
 app.engine("ejs", ejsMate);
 app.set('view engine', "ejs");
 
-mongoose.connect("mongodb://localhost:27017/menu_ejs")
+
+
+mongoose.connect("mongodb+srv://AdityaLekhi:Togosomewhere@cluster0.rhhiw.mongodb.net/menus?retryWrites=true&w=majority")
     .then(() => {
         console.log("Connected to the database");
     })

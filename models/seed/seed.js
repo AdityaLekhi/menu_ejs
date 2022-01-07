@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Menu = require("../menu_model");
 const menuList = require("./seedData");
 
-mongoose.connect("mongodb://localhost:27017/menu_ejs")
+mongoose.connect("mongodb+srv://AdityaLekhi:Togosomewhere@cluster0.rhhiw.mongodb.net/menus?retryWrites=true&w=majority")
     .then(() => {
         console.log("Connected to the database");
     })
@@ -12,14 +12,14 @@ mongoose.connect("mongodb://localhost:27017/menu_ejs")
     })
 
 
-function createMenu(arr) {
+async function createMenu(arr) {
     console.log(arr.Name)
     const newItem = new Menu({
         Name: arr.Name,
         Description: arr.Description,
         Image: arr.Image
     })
-    newItem.save()
+    await newItem.save()
         .then(() => {
             console.log("Item Saved");
         })
