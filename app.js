@@ -1,13 +1,34 @@
 const express = require('express');
 const app = express();
+const mongoose = require("mongoose");
 const ejs = require('ejs');
+const ejsMate = require("ejs-mate");
+const Menu = require("./models/menu_model");
 
 app.use(express.static('public'));
+app.engine("ejs", ejsMate);
 app.set('view engine', "ejs");
+
+mongoose.connect("mongodb://localhost:27017/menu_ejs")
+    .then(() => {
+        console.log("Connected to the database");
+    })
+    .catch((e) => {
+        console.log("Error has occured");
+        console.log(e);
+    })
 
 
 app.get('/menu', function (req, res) {
-    res.render('index');
+    Menu.find({}, function (err, results) {
+        if (err) {
+            console.log(err);
+            res.send("A problem has occured while looking for Menus");
+        } else {
+            res.render('menu', { results: results });
+        }
+    })
+
 })
 
 app.get('/login', function (req, res) {
@@ -15,7 +36,7 @@ app.get('/login', function (req, res) {
 })
 
 app.get('/register', function (req, res) {
-    res.render('index');
+    res.render('register');
 })
 app.get('/submit', function (req, res) {
     res.render('submit');

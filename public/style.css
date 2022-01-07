@@ -5,3 +5,57 @@
 .navbar-light .navbar-nav .nav-link:hover {
   color: white;
 }
+
+/******* Menu styles *******/
+
+.menuItem {
+  background: #ffffff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  max-width: 260px;
+  margin: 16px;
+  transition: all 0.3s;
+}
+.menuItem h1 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+.menuItem img {
+  display: inline-block;
+  width: 100%;
+}
+.menuItem p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  align-items: start;
+  max-width: 1500px;
+}
+
+.menuItem:hover {
+  transform: scale(1.2);
+}
+
+.view_menu {
+  background-color: #9c36b5;
+  margin-top: 5px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
+
+.view_menu:hover {
+  background-color: #862e9c;
+}
+
+.arrow {
+  width: 15px;
+  margin: 0 auto;
+}
