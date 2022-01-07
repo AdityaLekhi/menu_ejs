@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const ejs = require('ejs');
 const ejsMate = require("ejs-mate");
 const Menu = require("./models/menu_model");
+const User = require("./models/user_model")
 
 app.use(express.static('public'));
 app.engine("ejs", ejsMate);
@@ -33,6 +34,10 @@ app.get('/menu', function (req, res) {
 
 app.get('/login', function (req, res) {
     res.render('login');
+})
+
+app.get('/authen', function (req, res) {
+    res.render('authen');
 })
 
 app.get('/register', function (req, res) {
