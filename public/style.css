@@ -11,6 +11,7 @@
   background-color: white;
   border-radius: 10px;
   display: inline-block;
+  margin-left: 30px;
   text-align: center;
   width: 100px;
 }
@@ -35,10 +36,19 @@ form,
   border-color: #8d25a7;
 }
 
-.authen .btn-primary:hover {
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn-primary:hover {
   color: #fff;
-  background-color: #8d25a7;
+  background-color: #8d25a7 !important;
   border-color: #9c36b5;
+}
+.btn-primary a:hover,
+.btn-secondary a:hover {
+  color: white;
 }
 
 /******* Menu styles *******/
